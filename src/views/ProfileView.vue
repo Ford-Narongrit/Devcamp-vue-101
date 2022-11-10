@@ -1,15 +1,15 @@
 <template>
   <div class="flex items-center justify-center space-x-5 h-screen">
-    <div v-for="member in members" :key="member">
       <profile-card
-        v-if="member.image"
+        v-for="member in members"
+        class="w-1/4"
+        :key="member"
         :name="member.name"
         :work="member.work"
         :birthday="member.birthday"
         :content="member.content"
         :image="member.image"
       ></profile-card>
-    </div>
   </div>
 </template>
 
@@ -24,9 +24,9 @@ export default {
           birthday: "25 September 2022",
           work: "work at CNC",
           content: "KU79",
-          image: null,
+          image: "/assets/images/profile.jpg",
           isMember: true,
-          score: 12
+          score: 12,
         },
         {
           name: "Patwo thammapalo",
@@ -35,7 +35,7 @@ export default {
           content: "KU80",
           image: "/assets/images/profile2.jpg",
           isMember: true,
-          score: 100
+          score: 100,
         },
         {
           name: "Tirion Fording",
@@ -44,16 +44,7 @@ export default {
           content: "KU99",
           image: "/assets/images/profile3.jpg",
           isMember: true,
-          score: 100
-        },
-        {
-          name: "Ford2",
-          birthday: "25 September 2022",
-          work: "work at CNC",
-          content: "KU79",
-          image: "/assets/images/profile.jpg",
-          isMember: false,
-          score: 51
+          score: 100,
         },
       ],
     };
