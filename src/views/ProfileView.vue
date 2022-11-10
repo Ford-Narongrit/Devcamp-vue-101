@@ -1,28 +1,15 @@
 <template>
   <div class="flex items-center justify-center space-x-5 h-screen">
-    <profile-card
-      class="w-1/4"
-      name="JobJob"
-      work="at CNC2"
-      birthday="25 September 2024"
-      content="KU99"
-    ></profile-card>
-    <profile-card
-      class="w-1/4"
-      image="/assets/images/profile2.jpg"
-      :name="name"
-      :work="work"
-      :birthday="birthday"
-      :content="content"
-    ></profile-card>
-    <profile-card
-      class="w-1/4"
-      image="/assets/images/profile3.jpg"
-      :name="name"
-      :work="work"
-      :birthday="birthday"
-      :content="content"
-    ></profile-card>
+    <div v-for="member in members" :key="member">
+      <profile-card
+        v-if="member.image"
+        :name="member.name"
+        :work="member.work"
+        :birthday="member.birthday"
+        :content="member.content"
+        :image="member.image"
+      ></profile-card>
+    </div>
   </div>
 </template>
 
@@ -31,11 +18,44 @@ import profileCard from "@/components/ProfileCard.vue";
 export default {
   data() {
     return {
-      name: "Narongrit",
-      birthday: "25 September 2022",
-      work: "work at CNC",
-      content: "KU79",
-      image: "/assets/images/profile.jpg",
+      members: [
+        {
+          name: "Narongrit thammapalo",
+          birthday: "25 September 2022",
+          work: "work at CNC",
+          content: "KU79",
+          image: null,
+          isMember: true,
+          score: 12
+        },
+        {
+          name: "Patwo thammapalo",
+          birthday: "20 September 2021",
+          work: "work at CNC",
+          content: "KU80",
+          image: "/assets/images/profile2.jpg",
+          isMember: true,
+          score: 100
+        },
+        {
+          name: "Tirion Fording",
+          birthday: "14 September 2000",
+          work: "work at KU",
+          content: "KU99",
+          image: "/assets/images/profile3.jpg",
+          isMember: true,
+          score: 100
+        },
+        {
+          name: "Ford2",
+          birthday: "25 September 2022",
+          work: "work at CNC",
+          content: "KU79",
+          image: "/assets/images/profile.jpg",
+          isMember: false,
+          score: 51
+        },
+      ],
     };
   },
   components: {

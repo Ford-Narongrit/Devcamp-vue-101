@@ -26,7 +26,7 @@ export default {};
 
 <style>
 #background {
-  background-image: url(../assets/images/background.jpg);
+  /* background-image: url(../assets/images/background.jpg); */
   background-size: cover;
   background-repeat: no-repeat;
 }

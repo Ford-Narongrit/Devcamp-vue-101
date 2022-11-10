@@ -2,11 +2,15 @@
   <div
     class="rounded-lg border-2 py-6 shadow-lg backdrop-blur-2xl bg-white/50 transition duration-300 ease-in-out hover:bg-teal-700 hover:scale-105"
   >
-    <div
+
+   <div
       class="relative h-60 w-60 rounded-full overflow-hidden bg-white mx-auto border-gray-700 border-2"
     >
       <div class="h-full bg-cover bg-center bg-no-repeat" :style="getUrlImage(image)"></div>
       />
+
+
+      
     </div>
     <div class="w-2/3 mx-auto">
       <div class="text-xl font-bold">{{ name }}</div>
@@ -50,7 +54,7 @@ export default {
     getUrlImage(imagePath)
     {
      return { 'background-image': 'url("./src/' + imagePath + '")' };
-    }
+    },
   }
 };
 </script>
