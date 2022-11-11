@@ -1,4 +1,3 @@
 module.exports = {
-    productionSourceMap: false,
-    publicPath: '/Devcamp-vue-101/'
-  }
+  publicPath: "/Devcamp-vue-101/",
+};
